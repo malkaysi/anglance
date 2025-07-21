@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { Property } from './property/property';
-import { Auto } from './auto/auto';
 
 export const individualRoutes: Routes = [
   {
