@@ -1,0 +1,19 @@
+src/
+└── app/
+    └── domains/
+        └── content/
+            └── individuals/
+                ├── individuals.module.ts
+                ├── individuals-routing.module.ts
+                ├── components/
+                ├── pages/
+                │   └── home/                       # for /individuals (optional)
+                └── products/
+                    ├── products.module.ts
+                    ├── products-routing.module.ts
+                    ├── auto-insurance/
+                    │   └── auto-insurance.component.ts
+                    ├── boats/
+                    │   └── boats.component.ts
+                    └── valuables/
+                        └── valuables.component.ts

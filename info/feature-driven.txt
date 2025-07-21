@@ -1,0 +1,22 @@
+src/
+├── app/
+│   ├── core/                    # App-wide singletons
+│   │   ├── services/
+│   │   └── models/
+│   ├── shared/                  # Reusable components
+│   │   ├── components/
+│   │   │   └── navigation/      # Your nav components here
+│   │   └── ui/
+│   ├── features/                # Product features
+│   │   ├── individual/
+│   │   │   ├── individual.module.ts
+│   │   │   ├── individual-routing.module.ts
+│   │   │   └── pages/
+│   │   │       ├── property/
+│   │   │       ├── auto/
+│   │   │       └── valuables/
+│   │   ├── business/
+│   │   └── agents/
+│   ├── layout/                  # Header, footer, etc.
+│   └── pages/
+│       └── home/

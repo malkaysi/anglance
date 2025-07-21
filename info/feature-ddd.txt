@@ -1,0 +1,20 @@
+src/
+└── app/
+    ├── features/
+    │   └── individual/
+    │       ├── individual.routes.ts
+    │       ├── individual.component.ts
+    │       │
+    │       ├── property/               ← Property “micro-feature”
+    │       │   ├── property.routes.ts  ← child routing for /individual/property
+    │       │   ├── property.component.ts
+    │       │   ├── property.service.ts  ← fetch/save property data
+    │       │   └── components/          ← reusable bits on the Property page
+    │       │       ├── property-list.component.ts
+    │       │       ├── property-detail.component.ts
+    │       │       └── property-editor.component.ts
+    │       │
+    │       ├── auto/
+    │       └── valuables/
+    ├── core/
+    └── shared/
