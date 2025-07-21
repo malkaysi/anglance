@@ -25,7 +25,7 @@ export class App {
     {
       label: 'Individual',
       children: [
-        { label: 'Property', route: '/individuals/products/home' },
+        { label: 'Property', route: '/individuals/products/property' },
         { label: 'Auto', route: '/individuals/products/auto' },
       ],
     },
