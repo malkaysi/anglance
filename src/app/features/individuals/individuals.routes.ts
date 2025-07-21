@@ -6,8 +6,15 @@ export const individualRoutes: Routes = [
   {
     path: '',
     children: [
-      { path: 'property', component: Property },
-      { path: 'auto', component: Auto },
+      {
+        path: 'property',
+        loadComponent: () =>
+          import('./property/property').then((m) => m.Property),
+      },
+      {
+        path: 'auto',
+        loadComponent: () => import('./auto/auto').then((m) => m.Auto),
+      },
     ],
   },
 ];
