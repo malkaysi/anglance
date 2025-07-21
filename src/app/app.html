@@ -1,6 +1,17 @@
 <mat-toolbar color="primary">
-  @for (navItem of navItems; track $index) {
-    <button matButton>{{ navItem.label }}</button>
+  @for (navItem of navItems; track navItem.label) {
+    @if (navItem.children?.length) {
+      <button matButton [matMenuTriggerFor]="menu">{{ navItem.label }}</button>
+
+      <mat-menu #menu="matMenu">
+        @for (child of navItem.children; track child.label) {
+          <button mat-menu-item [routerLink]="child.route">{{ child.label }}</button>
+        }
+      </mat-menu>
+    } @else {
+    <button matButton [routerLink]="navItem.route">{{ navItem.label }}</button>
+
+    }
   }
 </mat-toolbar>
 
