@@ -34,4 +34,5 @@ type Schema = {
 
 const directus = createDirectus<Schema>('http://localhost:8055').with(rest());
 
-export { directus, Global, Post, Page };
+export { directus };
+export type { Global, Post, Page };
