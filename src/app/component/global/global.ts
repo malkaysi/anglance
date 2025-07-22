@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { directus, Global } from '../../../../directus';
 import { readSingleton } from '@directus/sdk';
 import { CommonModule } from '@angular/common';
+import { GlobalService } from './service/global';
 
 @Component({
   selector: 'app-global',
@@ -9,14 +10,19 @@ import { CommonModule } from '@angular/common';
   templateUrl: './global.html',
   styleUrl: './global.css',
 })
-export class GlobalComponent implements OnInit {
+export class GlobalComponent {
   global: Global | undefined;
-  async ngOnInit(): Promise<void> {
-    await this.getGlobal();
-  }
+  globalService: GlobalService = inject(GlobalService);
 
-  async getGlobal() {
-    this.global = await directus.request<Global>(readSingleton('global'));
-    console.log(this.global);
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  async ngOnInit() {
+    try {
+      const global = await this.globalService.getGlobal();
+      this.global = global;
+      this.cdr.detectChanges();
+    } catch (e) {
+      console.error('Error loading global singleton', e);
+    }
   }
 }
