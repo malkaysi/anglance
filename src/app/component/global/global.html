@@ -1,8 +1,8 @@
 <div>
-  @if (global) 
+  @if (globalSignal()) 
   {
-  <h1>{{ global.title }}</h1>
-  <p>{{ global.description }}</p>
+  <h1>{{ globalSignal()?.title }}</h1>
+  <p>{{ globalSignal()?.description }}</p>
   } @else {
     <p>No data yet</p>
   } 
