@@ -1,0 +1,8 @@
+<div>
+  @if (pageSignal()) {
+  <h1>{{ pageSignal()?.title }}</h1>
+  <p>{{ pageSignal()?.content }}</p>
+  } @else {
+    <div>Didn't work</div>
+  }
+</div>
