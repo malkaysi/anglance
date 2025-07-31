@@ -39,18 +39,14 @@ export class PageComponent {
   }
 
   async getPageBySlug(slug: string) {
-    //@ts-ignore
-    /* this.page = await directus.request<Page[]>(
-      //@ts-ignore
-      readItems('pages', [{ slug }])
-    )[0]; */
-
     const pages = await directus.request<Page[]>(
       readItems('pages', {
         filter: { slug: { _eq: slug } },
         limit: 1,
       })
     );
+
+    console.log(pages);
 
     this.pageSignal.set(pages[0] ?? undefined);
   }
