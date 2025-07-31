@@ -29,5 +29,17 @@ export class App {
         { label: 'Auto', route: '/individuals/products/auto' },
       ],
     },
+    {
+      label: 'About',
+      route: '/about',
+    },
+    {
+      label: 'Privacy',
+      route: '/privacy',
+    },
+    {
+      label: 'Conduct',
+      route: '/conduct',
+    },
   ];
 }
