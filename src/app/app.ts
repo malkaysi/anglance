@@ -41,5 +41,9 @@ export class App {
       label: 'Conduct',
       route: '/conduct',
     },
+    {
+      label: 'Articles',
+      route: '/articles',
+    },
   ];
 }
