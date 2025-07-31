@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { ArticleService } from './article-service';
-import { Article } from '../../../../directus';
+import { Article, ArticleTranslations } from '../../../../directus';
 
 @Component({
   selector: 'app-article',
@@ -17,6 +17,8 @@ export class ArticleComponent {
       const usArticles = await this.articlesService.getEnglishUSArticles();
       this.articlesSignal.set(usArticles);
       const allArticles = await this.articlesService.getAllArticles();
+      const germanArticles = await this.articlesService.getGermanArticles();
+      console.log(usArticles);
     } catch (e) {
       console.log(e);
     }

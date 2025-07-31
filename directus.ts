@@ -37,7 +37,6 @@ type ArticleTranslations = {
 type Article = {
   id: string;
   translations?: ArticleTranslations[];
-  'translations.*'?: ArticleTranslations[];
 };
 
 type Schema = {
@@ -45,7 +44,6 @@ type Schema = {
   posts: Post[];
   pages: Page[];
   articles: Article[];
-  articles_translations: ArticleTranslations[];
 };
 
 const directus = createDirectus<Schema>('http://localhost:8055').with(rest());
