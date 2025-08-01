@@ -17,7 +17,6 @@ export class ArticleService {
         fields: ['*', { translations: ['*'] }],
       })
     );
-    console.log(articles);
     return articles;
   }
 
@@ -34,7 +33,6 @@ export class ArticleService {
         },
       })
     );
-    console.log(articles);
     return articles;
   }
 
@@ -52,7 +50,7 @@ export class ArticleService {
       })
     );
 
-    console.log(articles);
+    console.log(articles[0].translations);
     return articles;
   }
 }
